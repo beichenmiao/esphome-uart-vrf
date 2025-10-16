@@ -108,7 +108,6 @@ void UartVrfComponent::initialize_climates_from_restore(const UartVrfClimateStor
             uart_climate->set_object_id(strdup(object_id.c_str()));
 
             App.register_component(uart_climate);
-            App.register_climate(uart_climate);
             this->climates_.push_back(uart_climate);
         }
     }
@@ -240,7 +239,6 @@ void UartVrfComponent::on_climate_create_callback(vrf_protocol::VrfClimate* clim
       uart_climate->set_name(strdup(name.c_str()));
       uart_climate->set_object_id(strdup(climate_object_id.c_str()));
       App.register_component(uart_climate);
-      App.register_climate(uart_climate);
       this->climates_.push_back(uart_climate);
     }
 }
